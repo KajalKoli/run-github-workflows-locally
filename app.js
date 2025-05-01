@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my Node.js server! Hello there.. we aare  trying to run the github workflows locally');
+    res.send('Welcome to my Node.js server! Hello there.. we are  trying to run the github workflows locally');
 });
 
 app.listen(3000, () => {
