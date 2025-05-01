@@ -4,7 +4,10 @@
   "description": "a basic node js project to test/learn the working of github workflows locally with github extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "jest",
+    "build": "node build.js",
+    "format:check": "prettier --check ."
   },
   "keywords": [
     "github-workflows",

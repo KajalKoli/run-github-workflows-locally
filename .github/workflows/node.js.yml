@@ -26,6 +26,27 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build project (if applicable)
+      run: npm run build
+      if: exists('package.json') && contains(fromJson(steps.get-pkg.outputs.content).scripts, 'build')
+
+    - name: Check formatting (if using prettier)
+      run: npm run format:check
+      if: exists('package.json') && contains(fromJson(steps.get-pkg.outputs.content).scripts, 'format:check')
+
+    - name: Upload test coverage (optional)
+      if: success()
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: coverage/
