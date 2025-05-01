@@ -1,0 +1,19 @@
+{
+  "name": "run-github-workflows-locally",
+  "version": "1.0.0",
+  "description": "a basic node js project to test/learn the working of github workflows locally with github extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github-workflows",
+    "run-locally",
+    "Kajalkoli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
